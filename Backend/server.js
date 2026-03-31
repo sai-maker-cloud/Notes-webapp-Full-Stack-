@@ -31,8 +31,8 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(frontendPath, 'index.html'));
     });
 } else {
-    app.get("/*", (req, res) => {
-        res.send("API running...");
+    app.use((req, res) => {
+        res.status(404).send("Route not found");
     });
 }
 
