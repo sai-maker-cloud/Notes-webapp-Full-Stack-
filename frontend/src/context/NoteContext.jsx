@@ -9,7 +9,7 @@ export const NoteProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const { token } = useContext(AuthContext);
 
-    const API_URL = 'http://localhost:5000/api/notes';
+    const API_URL = '/api/notes';
 
     const fetchNotes = async () => {
         if (!token) return;

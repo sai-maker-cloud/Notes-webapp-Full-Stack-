@@ -123,7 +123,7 @@ const NoteEditor = ({ note, onClose, onSave }) => {
                                         <FiX />
                                     </button>
                                     {isImage(att.mimetype) ? (
-                                        <div className="attachment-image" style={{ backgroundImage: `url(http://localhost:5000${att.url})` }}></div>
+                                        <div className="attachment-image" style={{ backgroundImage: `url(${att.url})` }}></div>
                                     ) : (
                                         <div className="attachment-file">
                                             <FiFile className="file-icon" />

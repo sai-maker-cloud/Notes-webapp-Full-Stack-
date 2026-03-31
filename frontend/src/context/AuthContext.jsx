@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
     }, [token]);
 
     const login = async (email, password) => {
-        const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+        const res = await axios.post('/api/auth/login', { email, password });
         if (res.data.token) {
             setToken(res.data.token);
             setUser({ id: res.data.id, name: res.data.name, email: res.data.email });
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const register = async (name, email, password) => {
-        const res = await axios.post('http://localhost:5000/api/auth/register', { name, email, password });
+        const res = await axios.post('/api/auth/register', { name, email, password });
         if (res.data.token) {
             setToken(res.data.token);
             setUser({ id: res.data.id, name: res.data.name, email: res.data.email });
